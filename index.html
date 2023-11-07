@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+ <h3>Age Checker</h3>
+ <label for="age">Enter your age</label>
+ <input type="text" id="age">
+ <button type="submit" id="btn-check">Check</button>
+</div>
+
+<p id="remarks">Remarks:</p>
+    <script>
+        const btnClick = document.getElementById('btn-check')
+btnClick.addEventListener('click', ()=>{
+    let yourAge = parseInt(document.getElementById('age').value);
+// console.log(yourAge)
+let yourRemarks = document.getElementById("remarks")
+
+if(yourAge < 0){
+    yourRemarks.textContent = "Not a valid Age. "
+    }else if(isNaN(yourAge)){
+        yourRemarks.textContent = "Please type a nunber."
+    }
+    else if(yourAge >= 18){
+        yourRemarks.textContent = "Your an adult."
+    }else
+    {
+        yourRemarks.textContent = "Your not old enough."
+    }
+})
+
+// let currentYear = parseInt(prompt(`What is the current year now?`));
+// document.write(currentYear - age);
+// console.log(currentYear - age);
+    </script>
+
+    
+</body>
+</html>
